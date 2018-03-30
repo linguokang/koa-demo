@@ -1,0 +1,29 @@
+.box {
+  position: relative;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  overflow: hidden;
+  padding-bottom: 0.88rem; }
+  .box .banner {
+    width: 100%; }
+  .box .title {
+    margin-top: 0.21333rem;
+    font-size: 0.42667rem;
+    padding: 0 0.32rem;
+    background: #fff;
+    border-bottom: 1px solid #c6c6c6;
+    line-height: 1.33333rem; }
+  .box .code-list {
+    padding: 0 0.32rem;
+    font-size: 0.42667rem;
+    background: #fff; }
+    .box .code-list li {
+      display: flex;
+      justify-content: space-between;
+      height: 1.33333rem;
+      align-items: center;
+      border-bottom: 1px solid #c6c6c6; }
+    .box .code-list li:last-child {
+      border: none; }
+
+/*# sourceMappingURL=usercenter.css.map*/

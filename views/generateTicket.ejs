@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>生成票券</title>
+    <link href="./static/css/vendors.css" rel="stylesheet">
+    <link href="./static/css/generateTicket.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="box">
+        <form action="/generateTicket" method="post" class="generateForm">
+            <select name="types">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+            <input type="number" placeholder="请输入数量" name="number" id="number">
+            <div class="error"></div>
+            <input class="submit" type="submit" value="生成券码" id="submit">
+        </form>
+        <div class="nav_box">
+            <ul class="nav">
+                <li>
+                    <a href="generateTicket.html">
+                        <div>生成券码</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="myTicket.html">
+                        <div>我的券码</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="usercenter.html">
+                        <div>个人中心</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./static/js/vendors.js"></script>
+    <script type="text/javascript" src="./static/js/generateTicket.js"></script>
+</body>
+
+</html>

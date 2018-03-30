@@ -1,0 +1,28 @@
+.box {
+  position: relative;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  overflow: hidden;
+  padding-bottom: 0.88rem; }
+  .box .banner {
+    width: 100%; }
+  .box .code-list {
+    margin-top: 0.21333rem;
+    padding: 0 0.32rem;
+    font-size: 0.42667rem;
+    background: #fff; }
+    .box .code-list li {
+      display: flex;
+      justify-content: space-between;
+      height: 1.33333rem;
+      align-items: center;
+      border-bottom: 1px solid #c6c6c6; }
+      .box .code-list li div:nth-child(2) {
+        border: 1px solid #434343;
+        padding: 0.13333rem;
+        font-size: 0.26667rem;
+        border-radius: 0.13333rem; }
+    .box .code-list li:last-child {
+      border: none; }
+
+/*# sourceMappingURL=myTicket.css.map*/

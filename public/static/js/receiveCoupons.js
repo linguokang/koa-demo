@@ -1,0 +1,1 @@
+webpackJsonp([3],{12:function(n,t){},17:function(n,t,e){"use strict";(function(n){var t=e(2);!function(n){n&&n.__esModule}(t);e(3),e(12),e(4),e(1),n(".receiveForm").on("submit",function(t){n("#couponCode").val()?n(this).submit():(t.preventDefault(),n(".error").text("请输入券码"))})}).call(t,e(0))}},[17]);

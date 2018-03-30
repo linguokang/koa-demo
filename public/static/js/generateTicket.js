@@ -1,0 +1,1 @@
+webpackJsonp([4],{14:function(n,t,e){"use strict";(function(n){var t=e(2);!function(n){n&&n.__esModule}(t);e(3),e(9),e(4),e(6),e(5),e(1),n(".generateForm").on("submit",function(t){n("#number").val()?n(this).submit():(t.preventDefault(),n(".error").text("请输入数量"))})}).call(t,e(0))},9:function(n,t){}},[14]);

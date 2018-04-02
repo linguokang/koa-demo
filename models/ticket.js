@@ -14,6 +14,10 @@ const Ticket = sequelize.define('ticket', {
   number: {
     type: Sequelize.INTEGER,
     allowNull: false,
+  },
+  coupon: {
+    type: Sequelize.STRING,
+    allowNull: false,
   }
 });
  

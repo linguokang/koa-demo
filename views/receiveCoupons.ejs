@@ -11,12 +11,39 @@
 
 <body>
     <div class="box">
-        <form action="form_action.asp" method="post" class="receiveForm">
+        <form action="receiveCoupons" method="post" class="receiveForm">
             <div class="title">领取优惠券后,请在现场使用时出示给工作人员</div>
-            <input type="text" placeholder="请输入券码" name="" id="couponCode">
+            <input type="text" placeholder="请输入券码" name="conpon" id="couponCode">
+            <% if(error){ %>
+                <%= error %>
+            <% } %>
             <div class="error"></div>
             <input class="submit" type="submit" value="领取优惠券" id="submit">
         </form>
+        <div class="nav_box">
+            <ul class="nav">
+                <li>
+                    <a href="receiveCoupons">
+                        <div>领取券码</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <div>生成券码</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="myTicket">
+                        <div>我的券码</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="usercenter">
+                        <div>个人中心</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <script type="text/javascript" src="./static/js/vendors.js"></script>
     <script type="text/javascript" src="./static/js/receiveCoupons.js"></script>

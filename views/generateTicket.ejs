@@ -13,29 +13,35 @@
     <div class="box">
         <form action="/generateTicket" method="post" class="generateForm">
             <select name="types">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+              
+                <% for(var i=0; i<TicketsType.length; i++) {%>
+                    <option value='<%= TicketsType[i].name %>'><%= TicketsType[i].name %></option>
+                <% } %>
+                
             </select>
-            <input type="number" placeholder="请输入数量" name="number" id="number">
+            <input type="text" placeholder="请输入数量" name="number" id="number">
             <div class="error"></div>
             <input class="submit" type="submit" value="生成券码" id="submit">
         </form>
         <div class="nav_box">
             <ul class="nav">
                 <li>
-                    <a href="generateTicket.html">
+                    <a href="receiveCoupons">
+                        <div>领取券码</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
                         <div>生成券码</div>
                     </a>
                 </li>
                 <li>
-                    <a href="myTicket.html">
+                    <a href="myTicket">
                         <div>我的券码</div>
                     </a>
                 </li>
                 <li>
-                    <a href="usercenter.html">
+                    <a href="usercenter">
                         <div>个人中心</div>
                     </a>
                 </li>

@@ -17,22 +17,23 @@ router.get('/json', async (ctx, next) => {
   }
 })
 // 生成券码页面
-router.get('/', async (ctx, next) => {
-  await ctx.render('generateTicket', {
-    title: 'Hello Koa 2!'
-  })
-})
+router.get('/', generateTicket.getTicketType) 
+
 // 领取优惠券页面
 router.get('/receiveCoupons', async (ctx, next) => {
   await ctx.render('receiveCoupons', {
-    title: 'Hello Koa 2!'
+    error: ''
   })
 })
+
 // 我的优惠券页面
-router.get('/myTicket', async (ctx, next) => {
-  await ctx.render('myTicket', {
-    title: 'Hello Koa 2!'
-  })
-})  
+router.get('/myTicket',generateTicket.getTicket)
+
+// 提交生成优惠券
 router.post('/generateTicket', generateTicket.createTicket)
+
+// 提交领取优惠券
+router.post('/receiveCoupons', generateTicket.deleteTicket)
+
+
 module.exports = router

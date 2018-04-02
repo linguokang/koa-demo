@@ -1,6 +1,8 @@
 const Ticket = require('../proxy/ticket')
+const TicketsType = require('../proxy/ticketType')
+const creatRandom = require('../utils/randomString')
 /**
- * 新建主题
+ * 新建票券
  * @param ctx
  * @returns {*}
  */
@@ -8,26 +10,20 @@ exports.createTicket = async(ctx) => {
     let message = {};
     message.result = false;
     // try {
-      //提取基本信息
-      // console.log(ctx.body+'++++++++++++++++++++++++')
+      let coupon = creatRandom.creatRandom(9)
+      console.log(coupon)
       let ticketInfo = {
         types: ctx.request.body.types,
         number: ctx.request.body.number,
+        coupon:coupon
       }; 
-      console.log(ticketInfo.types+'++++++++++++++++++++++++')
-      console.log(ticketInfo.number+'++++++++++++++++++++++++')
-      //在数据库新建主题
+      //在数据库新建票券
       await Ticket.createTicket(ticketInfo);
   
-      //给用户增加积分
-    //   await User.addIntegration(ctx.session.user.id, 5);
-  
-      message.result = true;
-      ctx.body = message;
-      // await ctx.render('generateTicket', {
-      //   title: 'Hello Koa 2!'
-      // })
-      return;
+      let Tickets = await Ticket.getTicket();
+      await ctx.render('myTicket', {
+        Tickets: Tickets
+      })
     // }
     // catch (err) {
     //   message.message = '发布出错';
@@ -35,3 +31,36 @@ exports.createTicket = async(ctx) => {
     //   return;
     // }
   }; 
+// 获取票券
+  exports.getTicket = async(ctx) =>{
+    let message = {};
+    let Tickets = await Ticket.getTicket();
+    await ctx.render('myTicket', {
+      Tickets: Tickets
+    })
+  }
+  // 删除票券
+  exports.deleteTicket = async(ctx) =>{
+    let message = {};
+    let conpon = ctx.request.body.conpon;
+    let ticket = await Ticket.getOneTicket(conpon);
+    if(ticket){
+      await Ticket.deleteTicket(conpon);
+      let Tickets = await Ticket.getTicket();
+      await ctx.render('myTicket', {
+        Tickets: Tickets
+      })
+    }else{
+      await ctx.render('receiveCoupons', {
+        error: '票券码错误'
+      })
+    }
+   
+  }
+  // 获取所有票券类型
+  exports.getTicketType = async(ctx) =>{
+    let TicketsTypes = await TicketsType.getTicketType();
+    await ctx.render('generateTicket', {
+      TicketsType: TicketsTypes
+    })
+  }

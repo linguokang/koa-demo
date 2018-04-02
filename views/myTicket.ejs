@@ -13,34 +13,41 @@
     <div class="box">
         <img class="banner" src="./static/img/banner.566ff9b.jpg" alt="">
         <ul class="code-list">
-            <li>
-                <div>XX券码号：<em>XXX</em></div>
-                <div class="copy">点击复制</div>
-            </li>
-            <li>
-                <div>XX券码号：<em>XXX1</em></div>
-                <div class="copy">点击复制</div>
-            </li>
-            <li>
-                <div>XX券码号：<em>XXX2</em></div>
-                <div class="copy">点击复制</div>
-            </li>
-            <li>
-                <div>XX券码号：<em>XXX3</em></div>
-                <div class="copy">点击复制</div>
-            </li>
-            <li>
-                <div>XX券码号：<em>XXX4</em></div>
-                <div class="copy">点击复制</div>
-            </li>
-            <li>
-                <div>XX券码号：<em>XXX</em></div>
-                <div class="copy">点击复制</div>
-            </li>
-            <li>
-                <div>XX券码号：<em>XXX1</em></div>
-                <div class="copy">点击复制</div>
-            </li>
+            <% for(var i=0; i<Tickets.length; i++) {%>
+                <li>
+                    <div>
+                        <%= Tickets[i].types %>券码号：<em><%= Tickets[i].coupon %></em></div>
+                    <div class="copy">点击复制</div>
+                </li>
+                <% } %>
+                    <!-- <li>
+                        <div>XX券码号：<em>XXX</em></div>
+                        <div class="copy">点击复制</div>
+                    </li>
+                    <li>
+                        <div>XX券码号：<em>XXX1</em></div>
+                        <div class="copy">点击复制</div>
+                    </li>
+                    <li>
+                        <div>XX券码号：<em>XXX2</em></div>
+                        <div class="copy">点击复制</div>
+                    </li>
+                    <li>
+                        <div>XX券码号：<em>XXX3</em></div>
+                        <div class="copy">点击复制</div>
+                    </li>
+                    <li>
+                        <div>XX券码号：<em>XXX4</em></div>
+                        <div class="copy">点击复制</div>
+                    </li>
+                    <li>
+                        <div>XX券码号：<em>XXX</em></div>
+                        <div class="copy">点击复制</div>
+                    </li>
+                    <li>
+                        <div>XX券码号：<em>XXX1</em></div>
+                        <div class="copy">点击复制</div>
+                    </li> -->
 
         </ul>
 
@@ -48,17 +55,22 @@
     <div class="nav_box">
         <ul class="nav">
             <li>
-                <a href="generateTicket.html">
+                <a href="receiveCoupons">
+                    <div>领取券码</div>
+                </a>
+            </li>
+            <li>
+                <a href="/">
                     <div>生成券码</div>
                 </a>
             </li>
             <li>
-                <a href="myTicket.html">
+                <a href="myTicket">
                     <div>我的券码</div>
                 </a>
             </li>
             <li>
-                <a href="usercenter.html">
+                <a href="usercenter">
                     <div>个人中心</div>
                 </a>
             </li>
